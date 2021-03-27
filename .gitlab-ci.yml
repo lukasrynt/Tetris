@@ -1,0 +1,16 @@
+image: "python:3.8"
+
+stages:
+  - test
+
+
+pytest:
+  stage: test
+  script:
+    - pytest
+  only:
+    - semestralka
+
+
+before_script:
+  - pip install pytest numpy pygame > /dev/null
